@@ -3,7 +3,7 @@
 ## 📌 Project Overview
 This is a full-stack blogging application engineered with a **Security-First** mindset. It demonstrates the implementation of professional-grade security controls to mitigate the OWASP Top 10 vulnerabilities.
 
-![Dashboard Preview](screenshots/dashboard_preview.png)
+![Dashboard Preview](screenshots/dashboard.jpg)
 
 ## 🛡️ Security Features
 * **SQL Injection Protection:** Utilizes **PDO Prepared Statements** for all database interactions.
