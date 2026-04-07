@@ -21,11 +21,11 @@ This is a full-stack blogging application engineered with a **Security-First** m
 
 | **Role-Based Access (Admin)** | **CSRF Verification** |
 |:---:|:---:|
-| ![Admin Dashboard](screenshots/01_admin_dashboard.png) | ![CSRF Check](screenshots/02_csrf_protection.png) |
+| ![Admin Dashboard](screenshots/01_admin_dashboard.jpg) | ![CSRF Check](screenshots/02_csrf_protection.jpg) |
 
-| **Secure Hashed Credentials** | **Real-Time Concurrent Chat** |
-|:---:|:---:|
-| ![Database](screenshots/03_database_security.png) | ![Chat System](screenshots/04_realtime_chat.png) |
+| **Secure Hashed Credentials** |
+|:---:|
+| ![Database](screenshots/03_database_security.jpg) |
 
 ## 📂 Folder Structure
 * `/src`: Application logic and security middleware.
