@@ -1,0 +1,11 @@
+# Ignore XAMPP/Server config files
+.htaccess
+config.php
+php_errors.log
+
+# Ignore OS junk
+.DS_Store
+Thumbs.db
+
+# Ignore private environment variables
+.env
