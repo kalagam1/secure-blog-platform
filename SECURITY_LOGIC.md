@@ -10,10 +10,12 @@ Instead of concatenating user input into SQL strings, I used **PDO Prepared Stat
 $stmt = $pdo->prepare('SELECT * FROM posts WHERE id = :id');
 $stmt->execute(['id' => $_GET['id']]);
 $post = $stmt->fetch();
+```
 
 ## 2. CSRF Protection (Token Validation)
 To prevent Cross-Site Request Forgery, I implemented a per-session token system. Every state-changing request (like deleting a post) must include a valid token that matches the one stored in the user's session.
 
+```php
 // Step 1: Generate and store token in session
 $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
 
@@ -22,18 +24,20 @@ if (!isset($_POST['csrf_token']) || $_POST['csrf_token'] !== $_SESSION['csrf_tok
     die("CSRF token validation failed.");
 }
 // Proceed with deletion only if token is valid
+```
 
 ## 3. XSS Mitigation (Output Encoding)
 To prevent Stored and Reflected XSS, all user-generated content is sanitized before being rendered in the browser.
 
-PHP
+```php
 // Encoding output to neutralize malicious scripts
 echo htmlspecialchars($post['body'], ENT_QUOTES, 'UTF-8');
+```
 
 ## 4. Secure Credential Storage (Bcrypt)
 Passwords are never stored in plain text. I utilized PHP’s password_hash with the PASSWORD_DEFAULT (Bcrypt) algorithm.
 
-PHP
+```php
 // Hashing during registration
 $hashedPassword = password_hash($userPassword, PASSWORD_DEFAULT);
 
@@ -41,3 +45,4 @@ $hashedPassword = password_hash($userPassword, PASSWORD_DEFAULT);
 if (password_verify($inputPassword, $storedHash)) {
     // Login success
 }
+```
