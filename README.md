@@ -5,12 +5,12 @@ This is a full-stack blogging application engineered with a **Security-First** m
 
 ![Dashboard Preview](screenshots/dashboard.jpg)
 
-## 🛡️ Security Features
-* **SQL Injection Protection:** Utilizes **PDO Prepared Statements** for all database interactions.
-* **CSRF Protection:** (Shown in screenshot) Implemented unique per-session tokens for sensitive actions like **Post Deletion**.
-* **Role-Based Access Control (RBAC):** (Shown in screenshot) Logic to differentiate between `User` and `Superuser` permissions.
-* **XSS Defense:** Strict input sanitization using `htmlspecialchars()`.
-* **Secure Authentication:** Password storage using `password_hash()` (Bcrypt).
+## 🛡️ Security Impact and Outcomes
+* Focus: Risk Mitigation & Data Integrity
+Outcome:
+* Neutralized the risk of Unauthorized Data Access and Vertical Privilege Escalation by implementing a strict Role-Based Access Control (RBAC) architecture.
+* Prevented Account Takeover (ATO) and session hijacking by engineering a per-session CSRF token validation system for all state-changing actions.
+* Improved Database Security by utilizing PDO Prepared Statements, which completely mitigates SQL Injection (SQLi) attacks that lead to data leaks.
 
 ## 🛠️ Tech Stack
 * **Backend:** PHP, MySQL
